@@ -14,10 +14,21 @@ function addToList(itemName, itemPrice, itemQuantity) {
     tableDisplay[0].style.display = "table";
   }
   var tableRow = document.createElement('tr');
+  var tableElementItem = document.createElement('td');
+  var tableElementPrice = document.createElement('td');
+  var tableElementQuantity = document.createElement('td');
+  var tableElementTotalPrice = document.createElement('td');
   tableDisplay[0].appendChild(tableRow);
-  groceryItems.forEach(function(i){ // Not right
-    var tableElement = document.createElement('td');
-  })
+  tableRow.appendChild(tableElementItem);
+  tableRow.appendChild(tableElementPrice);
+  tableRow.appendChild(tableElementQuantity);
+  tableRow.appendChild(tableElementTotalPrice);
+  tableElementItem.innerText = itemInput.value;
+  tableElementPrice.innerText = priceInput.value;
+  tableElementQuantity.innerText = quantityInput.value;
+  tableElementTotalPrice.innerText = priceInput.value * quantityInput.value;
+//  groceryItems.forEach(function(i){ // Not right
+  //});
   //.innerText = itemInput.value;
 }
 

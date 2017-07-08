@@ -66,3 +66,7 @@ table th {
   background-color: #bba277;
   width: 140px;
 }
+
+table td {
+  background-color: #ddc499;
+}
