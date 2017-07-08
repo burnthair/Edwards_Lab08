@@ -15,6 +15,7 @@ function addToList(itemName, itemPrice, itemQuantity) {
   var tableDisplay = document.getElementsByTagName('table');
   if (groceryItems.length > 0) {
     tableDisplay[0].style.display = "table";
+    tableDisplay[1].style.display = "table";
   }
   // Create the table elements to contain the displayed user input
   var tableRow = document.createElement('tr');
