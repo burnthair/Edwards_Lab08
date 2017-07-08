@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Questrial', sans-serif;
+}
+
+header {
+  background: url('./img/grocery_background.jpg') no-repeat;
+  background-size: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 60px;
+}
+
+header h1 {
+  width: 35%;
+  margin: 0;
+  padding: 10px 10px 20px 10px;
+  border-radius: 20px;
+  color: #ddc499;
+  background-color: #cc8788;
+  font-family: 'Kurale', serif;
+  font-size: 300%;
+  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+  box-shadow: 5px 5px 5px #aa4748;
+}
+
+.input-field-container {
+  background-color: #445;
+  margin: 0;
+  padding: 20px 5px;
+  border-top: 4px solid #ddc499;
+}
+
+label {
+  padding: 5px 20px;
+  color: #ddc499;
+}
+
+input {
+  width: 240px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid #ddc499;
+  font-family: 'Questrial', sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 40px;
+  border-radius: 20px;
+  border: 3px solid #cc8788;
+  font-family: 'Kurale', serif;
+  background-color: #ddc499;
+  color: #445;
+}
+
+table {
+  margin: 0 auto;
+  display: none;
+  color: #445;
+}
+
+table th {
+  padding: 10px 20px;
+  background-color: #bba277;
+  width: 140px;
+}

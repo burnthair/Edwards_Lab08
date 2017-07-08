@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grocery List App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Kurale|Questrial" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Grocery List App</h1>
+  </header>
+  <div class="input-field-container">
+    <form action="">
+      <label for='item'>Item:</label>
+      <input id="item" type="text" placeholder='chicken, apples, peanut butter...'/>
+      <label for='price'>Price:</label>
+      <input id="price" type="text" placeholder='what does it cost?'/>
+      <label for='quantity'>Quantity:</label>
+      <input id="quantity" type="text" placeholder='how many would you like?'/>
+      <button id="add-button" type="button" onclick="addToList()">Add</button>
+    </form>
+  </div>
+  <section class="container">
+    <table>
+      <tr>
+        <th>ITEM</th>
+        <th>PRICE EACH</th>
+        <th>QUANTITY</th>
+        <th>TOTAL PRICE</th>
+      </tr>
+    </table>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
