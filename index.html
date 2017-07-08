@@ -13,14 +13,14 @@
     <h1>Grocery List App</h1>
   </header>
   <div class="input-field-container">
-    <form action="">
+    <form id="form">
       <label for='item'>Item:</label>
       <input id="item" type="text" placeholder='chicken, apples, peanut butter...'/>
       <label for='price'>Price:</label>
-      <input id="price" type="text" placeholder='what does it cost?'/>
+      <input id="price" type="number" min="0.01" step="0.01" placeholder='how much does it cost?'/>
       <label for='quantity'>Quantity:</label>
-      <input id="quantity" type="text" placeholder='how many would you like?'/>
-      <button id="add-button" type="button" onclick="addToList()">Add</button>
+      <input id="quantity" type="number" min="0.0" placeholder='how many would you like?'/>
+      <button id="add-button" type="button" onclick="addToList()">ADD</button>
     </form>
   </div>
   <section class="container">
@@ -30,6 +30,7 @@
         <th>PRICE EACH</th>
         <th>QUANTITY</th>
         <th>TOTAL PRICE</th>
+        <th id='empty-head'></th>
       </tr>
     </table>
   </section>
