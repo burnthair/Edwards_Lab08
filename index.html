@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Grocery List App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Kurale|Questrial" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <h1>Grocery List App</h1>
-  </header>
-  <div class="input-field-container">
-    <form id="form">
-      <label for='item'>Item:</label>
-      <input id="item" type="text" placeholder='chicken, apples, peanut butter...'/>
-      <label for='price'>Price:</label>
-      <input id="price" type="number" min="0.01" step="0.01" placeholder='how much does it cost?'/>
-      <label for='quantity'>Quantity:</label>
-      <input id="quantity" type="number" min="0.0" placeholder='how many would you like?'/>
-      <button id="add-button" type="button" onclick="addToList()">ADD</button>
-    </form>
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <header>
+        <h1>Grocery List App</h1>
+      </header>
+      <div class="input-field-container">
+        <form id="form">
+          <label for='item'>Item:</label>
+          <input id="item" type="text" placeholder='chicken, apples, peanut butter...' />
+          <label for='price'>Price:</label>
+          <input id="price" type="number" min="0.01" step="0.01" placeholder='how much does it cost?' />
+          <label for='quantity'>Quantity:</label>
+          <input id="quantity" type="number" min="0.0" placeholder='how many would you like?' />
+          <button id="add-button" type="button" onclick="addToList()">ADD</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <section class="container">
+        <table id="main-table">
+          <tr>
+            <th>ITEM</th>
+            <th>PRICE EACH</th>
+            <th>QUANTITY</th>
+            <th>TOTAL PRICE</th>
+            <th class='empty-cell'></th>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="empty-cell"></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right">Subtotal:</td>
+            <td id="subtotalElement"></td>
+            <td class="empty-cell"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right">Total:</td>
+            <td id="totalElement"></td>
+            <td class="empty-cell"></td>
+          </tr>
+        </table>
+      </section>
+    </div>
   </div>
-  <section class="container">
-    <table>
-      <tr>
-        <th>ITEM</th>
-        <th>PRICE EACH</th>
-        <th>QUANTITY</th>
-        <th>TOTAL PRICE</th>
-        <th class='empty-cell'></th>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th class="empty-cell"></th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td class="right">Subtotal:</td>
-        <td></td>
-        <td class="empty-cell"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td class="right">Total:</td>
-        <td></td>
-        <td class="empty-cell"></td>
-      </tr>
-    </table>
-  </section>
   <script src="script.js"></script>
 </body>
+
 </html>

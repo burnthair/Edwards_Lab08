@@ -5,27 +5,47 @@
   add the total row
   make the remove buttons functional
 */
+body:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  width: 2650px;
+  height: 1600px;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: opacity(0.7) saturate(40%) blur(2px);
+  background: url('./img/grocery_background.jpg') no-repeat;
+  background-position: -200px -200px;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Questrial', sans-serif;
+  overflow-x: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }
 
 header {
-  background: url('./img/grocery_background.jpg') no-repeat;
-  background-size: 100%;
   text-align: center;
   margin: 0;
-  padding: 60px;
+  padding: 40px;
 }
 
 header h1 {
-  width: 35%;
+  width: 320px;
   margin: 0 auto;
   padding: 10px 10px 20px 10px;
   border-radius: 20px;
-  color: #ddc499;
+  color: white;
   background-color: #cc8788;
   font-family: 'Kurale', serif;
   font-size: 300%;
@@ -35,9 +55,11 @@ header h1 {
 
 .input-field-container {
   background-color: #445;
-  margin: 0;
+  margin: 0 auto;
   padding: 20px 5px;
+  width: 320px;
   border-top: 4px solid #ddc499;
+  box-shadow: 5px 5px 5px #223;
 }
 
 label {
@@ -48,13 +70,14 @@ label {
 input {
   width: 240px;
   padding: 10px;
+  margin: 5px 5px 5px 35px;
   border-radius: 20px;
   border: 3px solid #ddc499;
   font-family: 'Questrial', sans-serif;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 5px 20px;
   margin-left: 40px;
   border-radius: 20px;
   border: 3px solid #cc8788;
@@ -64,10 +87,22 @@ button {
   font-weight: 900;
 }
 
+#add-button {
+  width: 180px;
+  margin: 20px 0 0 65px;
+}
+
+.container {
+  margin: 20px 0;
+}
+
 table {
-  margin: 0 auto;
   display: none;
   color: #445;
+}
+
+#main-table {
+  margin-top: 60px;
 }
 
 table th, table td {

@@ -1,22 +1,19 @@
 // Initialize the groceryItems array that will contain grocery objects
 var groceryItems = [];
+var tableDisplay = document.getElementsByTagName('table');
+var subtotal = 0;
 
 // Create a function to add a new item and price to the array
 function addToList(itemName, itemPrice, itemQuantity) {
   // Create variables to store user inputs
-  var itemInput = document.getElementById("item");
-  var priceInput = document.getElementById("price");
-  var quantityInput = document.getElementById("quantity");
+  itemName = document.getElementById("item");
+  itemPrice = document.getElementById("price");
+  itemQuantity = document.getElementById("quantity");
   // Create object of user inputs
-  var newObject = {name: itemInput.value, price: priceInput.value, quantity: quantityInput.value};
+  var newObject = {name: itemName.value, price: itemPrice.value, quantity: itemQuantity.value};
   // Add object to the array of grocery item objects
   groceryItems.push(newObject);
-  // See if groceryItem array has anything in it. If it is empty, do not display the table.
-  var tableDisplay = document.getElementsByTagName('table');
-  if (groceryItems.length > 0) {
-    tableDisplay[0].style.display = "table";
-    tableDisplay[1].style.display = "table";
-  }
+  isTableDisplayed();
   // Create the table elements to contain the displayed user input
   var tableRow = document.createElement('tr');
   var tableElementRemoveButton = document.createElement('button');
@@ -35,13 +32,33 @@ function addToList(itemName, itemPrice, itemQuantity) {
   tableRow.appendChild(tableElementTotalPrice);
   tableRow.appendChild(tableElementRemoveButton);
   // Fill the created elements with the user input
-  tableElementItem.innerText = itemInput.value;
-  tableElementPrice.innerText = priceInput.value;
-  tableElementQuantity.innerText = quantityInput.value;
-  tableElementTotalPrice.innerText = (priceInput.value * quantityInput.value).toFixed(2);
+  tableElementItem.innerText = itemName.value;
+  tableElementPrice.innerText = itemPrice.value;
+  tableElementQuantity.innerText = itemQuantity.value;
+  tableElementTotalPrice.innerText = (itemPrice.value * itemQuantity.value).toFixed(2);
+  // Add the value of each line's total to the subtotal and display it in the Subtotal cell
+  var tempTotalPrice = Number(tableElementTotalPrice.innerText);
+  subtotal += tempTotalPrice;
+  var fillSubtotalElement = document.getElementById('subtotalElement');
+  fillSubtotalElement.innerText = subtotal.toFixed(2);
+  // Calculate the total including tax and display it in the Total cell
+  var finalTotal = (subtotal * 1.06).toFixed(2);
+  var fillTotalElement = document.getElementById('totalElement');
+  fillTotalElement.innerText = finalTotal;
   // Clear input form fields
   var form = document.getElementById('form');
   form.reset();
+}
+
+// Function to see if groceryItem array has anything in it. If it is empty, do not display the table.
+function isTableDisplayed() {
+  if (groceryItems.length > 0) {
+    tableDisplay[0].style.display = "table";
+    tableDisplay[1].style.display = "table";
+  } else {
+    tableDisplay[0].style.display = "none";
+    tableDisplay[1].style.display = "none";
+  }
 }
 
 // Create a function that will remove an element from an array
@@ -49,3 +66,20 @@ function removeFromList(i) {
   console.log('cool')
   groceryItems.splice(i, 1);
 }
+
+
+// // Create a function to update the subtotal when an object is created or removed
+// function updateSubtotal(k) {
+//   subtotal += k.value;
+//   return
+// }
+// groceryItems.forEach(function(i){
+//   i.quantity = prompt('How many ' + i.name + '?');
+//   tempPrice = i.price * i.quantity;
+//   total += tempPrice;
+//   console.log("Item: " + i.name + " || Price: " + i.price + " || Quantity: " + i.quantity + " || Sub: " + tempPrice.toFixed(2));;
+// })
+// // Create a function to update the total with tax when an object is created or removed
+// function updateTotal() {
+//
+// }
