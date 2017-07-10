@@ -16,10 +16,11 @@ function addToList(itemName, itemPrice, itemQuantity) {
   isTableDisplayed();
   // Create the table elements to contain the displayed user input
   var tableRow = document.createElement('tr');
+  tableRow.setAttribute('id','groceryItems.indexOf(this)');
   var tableElementRemoveButton = document.createElement('button');
   var RemoveButtonText = document.createTextNode('REMOVE');
   tableElementRemoveButton.appendChild(RemoveButtonText);
-  tableElementRemoveButton.setAttribute('onclick','removeFromList()')
+  tableElementRemoveButton.setAttribute('onclick','removeFromList()');
   var tableElementItem = document.createElement('td');
   var tableElementPrice = document.createElement('td');
   var tableElementQuantity = document.createElement('td');
@@ -65,6 +66,7 @@ function isTableDisplayed() {
 function removeFromList(i) {
   console.log('cool')
   groceryItems.splice(i, 1);
+  var currentRow = thisiswhereistopped;
 }
 
 
